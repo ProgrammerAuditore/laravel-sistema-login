@@ -17,7 +17,7 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
     return view('home');
-});
+})->middleware('auth');
 
 Route::get('/register', [RegisterController::class, 'create'])
     ->name('register.index');
