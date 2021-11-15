@@ -28,3 +28,8 @@ Route::post('/register', [RegisterController::class, 'store'])
 Route::get('/login', [SessionController::class, 'create'])
     ->name('login.index');
 
+Route::post('/login', [SessionController::class, 'store'])
+    ->name('login.store');
+
+Route::get('/logout', [SessionController::class, 'destroy'])
+    ->name('login.destroy');

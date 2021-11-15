@@ -17,6 +17,15 @@
             <p class="text-2xl font-bold">My Application</p>
         </div>
         <ul class="w-1/2 px-16 ml-auto flex justify-end pt-1">
+        @if( auth()->check() )
+            <li class="mx-6">
+               <p class="text-center text-xl">Welcome <b>{{ auth()->user()->name }}</b></p>
+            </li>
+            <li>
+                <a class="font-bold py-3 px-4 rounded-md bg-red-500 hover:bg-red-600" 
+                href="{{ route('login.destroy') }}">Log Out</a>
+            </li>
+        @else 
             <li class="mx-6">
                 <a class="font-semibold hover:bg-indigo-700 py-3 px-4 rounded-md" 
                 href="{{ route('login.index') }}" >Log In</a>
@@ -25,6 +34,7 @@
                 <a class="font-semibold border-2 border-white py-2 px-4 rounded-md hover:bg-white hover:text-indigo-700" 
                 href="{{ route('register.index') }}">Register</a>
             </li>
+        @endif
         </ul>
     </nav>
 
