@@ -6,6 +6,7 @@
     <div class="block mx-auto my-12 p-8 bg-white w-1/3 border border-gray-200 rounded-lg shadow-lg">
     <h1 class="text-3xl text-center font-bold">Register</h1>
     <form action="" class="mt-4" method="POST">
+        @csrf
         
         <p class="border border-red-500 rounded-md bg-red-100 w-full text-red-600 p-2 my-2">
             * Errores 
